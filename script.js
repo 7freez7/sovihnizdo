@@ -67,7 +67,7 @@ function sendEmail(event) {
     const message = document.getElementById('message').value;
 
     // E-mailová adresa, na kterou bude zpráva odeslána TODO: ZMĚNIT EMAIL NA INFO@sovihnizdo.cz
-    const recipientEmail = "filipgilar07@gmail.com"; 
+    const recipientEmail = "info@sovihnizdo.cz"; 
 
 
     // Příprava URL s Gmail
