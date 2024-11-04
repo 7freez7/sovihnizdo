@@ -1,0 +1,650 @@
+@charset "UTF-8";
+
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  h1 {
+    font-size: 300%;
+  }
+
+  h2 {
+    font-size: 250%;
+  }
+
+  h3 {
+    font-size: 150%;
+  }
+
+  h1, h2, h3 {
+    font-family: "Nerko One";
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+  }
+
+  a {
+    color: grey;
+    font-weight: bold;
+  }
+  a:hover {
+    color: blue; /* Změna barvy na zelenou při najetí myši */
+}
+
+  .Wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+
+  }
+
+  .Wave svg {
+    position: relative;
+    display: block;
+    width: calc(140% + 1.3px);
+    height: 197px;
+
+  }
+
+  .Wave .shape-fill {
+    fill: #FFFFFF;
+    
+  }
+
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Nastaví výšku obrázku na 80 % výšky okna */
+    overflow: hidden;
+    background-color: black;
+    margin-bottom: 2%;
+
+  }
+
+  .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Přizpůsobí obrázek tak, aby pokrýval prostor a zachoval poměr stran */
+    position: relative;
+    opacity: 33%;
+
+
+  }
+
+  .header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 300%;
+    z-index: 1;
+    transition: transform 0.2s ease;
+    /* Removed box-shadow if it was unintentionally applied */
+    box-shadow: none; /* Ensure there's no shadow */
+  }
+
+  .left-arrow {
+    left: 3%;
+    color: #ddd;
+    font-size: 120px;
+
+  }
+
+  .right-arrow {
+    right: 3%;
+    color: #ddd;
+    font-size: 120px;
+
+  }
+
+  .arrow:hover {
+    transform: translateY(-50%) ;
+    color: rgb(61, 61, 255);
+  }
+
+
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .description {
+    height: 100%;
+    padding: 2%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 130%;
+    box-sizing: border-box;
+  }
+
+  .container .description p {
+    padding: 5px;
+  }
+
+  .container2 {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: flex-start;*/
+    justify-content: center; /* Změněno na center pro vycentrování */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+
+  }
+
+
+  .square {
+    width: 30%;
+    height: 300px;
+    padding: 30px;
+    margin: 10px; /* Mezera mezi čtverci */
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 3%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    font-size: 120%;
+
+
+}
+
+  .square:hover {
+    transform: scale(1.05);
+  }
+
+  .square-left-arrow, .square-right-arrow {
+    display: none;
+  }
+
+  .icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    filter: brightness(0);
+  }
+
+  .extra-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    margin-top: 10px;
+    font-size: 100%;
+    color: #555;
+  }
+
+  .square.active .extra-text,
+  .square:hover .extra-text {
+    max-height: 200px;
+    opacity: 1;
+  }
+
+  /* Footer styles remain unchanged */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    font-size: larger;
+  }
+
+  .footer-left {
+    flex: 0 0 60%;
+  }
+
+  .footer-right {
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .footer-right p {
+    text-align: left;
+    padding-left: 0;
+}
+
+  .map-container {
+    width: 100%;
+    height: 300px;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 8px rgba(255, 255, 255, 0.2);
+
+  }
+
+  .form-and-gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+  }
+
+  .form-container {
+    width: 50%; /* Formulář zabere 45 % šířky */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px; ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+
+
+  #mainImage {
+    display: block;
+    justify-content: end;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    position: relative; /* Potřebné pro umístění textu */
+    transition: all 0.3s ease; /* Plynulý přechod */
+    border-radius: 3%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+
+  }
+  
+  #mainImage:hover {
+    filter: brightness(50%) blur(3px); /* Ztmaví a rozostří obrázek při najetí */
+  }
+  
+  #mainImage::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Zarovná text doprostřed obrázku */
+    color: white;
+    font-size: 2rem;
+    opacity: 0; /* Skryje text, když není najeté myší */
+    transition: opacity 0.3s ease; /* Plynulý přechod zobrazení textu */
+  }
+  
+  .picturebox {
+    position: relative;
+  }
+
+  .picturebox .image {
+    max-width: 450px;
+    max-height: 600px;
+    object-fit: contain; /* Zachování poměru stran */
+    display: none; /* Skrývá všechny obrázky */
+
+  }
+
+  .image-box {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .image {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .image.active {
+    display: block;
+    animation: fadeIn 0.5s;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .lightbox {
+    display: flex; /* Lightbox se objeví, když se otevře */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+  }
+
+
+  .lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  /* Formulář */
+  .form-container label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .form-container input[type="email"],
+  .form-container textarea {
+    width: 95%;
+    padding: 2%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .form-container textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  .form-container button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .form-container button:hover {
+    background-color: rgb(61, 61, 255);
+    transform: scale(1.05);
+  }
+
+  button {
+    background-color: #555;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+
+
+
+  .footer-right p,
+  .footer-right h3 {
+    color: #f0f0f0;
+    padding: 10px;
+  }
+
+.Dots {
+  position: absolute;
+  display: none;
+}
+
+  @media (max-width: 768px) {
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .Dots {
+      display: block;
+    }
+
+    h1 {
+      font-size: 190%;
+  }
+
+  h2 {
+      font-size: 190%;
+  }
+
+  .header, .container, .container2, .form-container, .gallery {
+    width: 100%; /* Ujistí se, že každý prvek zabírá celou šířku */
+  }
+  .header {
+    position: relative;
+    width: 100%;
+    height: 60vh; 
+    overflow: hidden;
+    margin-bottom: 2%;
+
+  }
+  .header-image {
+  position: absolute; /* Umožní obrázku pokrýt celou šířku */
+  top: 0; /* Zarovná obrázek k horní části */
+  left: 0; /* Zarovná obrázek k levé části */
+  width: 100%; /* Zajišťuje, že obrázek zabírá celou šířku */
+  height: 100%; /* Zajišťuje, že obrázek zabírá celou výšku */
+  object-fit: cover; /* Přizpůsobí obrázek tak, aby pokrýval prostor a zachoval poměr stran */
+  }
+  
+  .header-text {
+    position: absolute;
+    font-size: 200%; /* Zmenšeno z 3rem na 2rem */
+}
+
+  .container, .container2, .form-and-gallery {
+      flex-direction: column; /* Změna layoutu na vertikální */
+      justify-content: center;
+      padding: 10px;
+  }
+
+  .container {
+      width: 100%;
+      font-size: 120%;
+  }
+
+  .description {
+      width: 100%;
+      font-size: 100%;
+  }
+
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Skryje ostatní "squares" */
+    position: relative;
+}
+
+  .square {
+    width: 95%; 
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none; /* Skryjeme všechny "squares" na začátku */
+}
+
+.square.active {
+  display: block; /* Zobrazí pouze aktivní "square" */
+}
+
+
+.square-left-arrow, .square-right-arrow {
+  position: absolute;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0px;
+  cursor: pointer;
+  font-size: 50%;
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+
+.square-left-arrow {
+  left: 7%;
+  top: 20%;
+  color: #ddd;
+  font-size: 80px;
+}
+
+.square-right-arrow {
+  right: 7%;
+  top: 20%;
+  color: #ddd;
+  font-size: 80px;
+}
+
+.square-left-arrow:hover, .square-right-arrow:hover {
+  transform: translateY(-50%);
+  color: rgb(61, 61, 255);
+}
+
+.extra-text {
+  max-height: none; /* Zruší maximální výšku */
+    opacity: 1; /* Nastaví viditelnost textu */
+    display: block; /* Zajistí, že text bude zobrazen */
+    transition: none;
+
+}
+.left-arrow {
+  left: 3%;
+  font-size: 100px;
+
+}
+
+.right-arrow {
+  right: 3%;
+  font-size: 100px;
+
+}
+
+  .form-container, .gallery {
+      width: 100%;
+      margin-bottom: 20px;
+      transition: none;
+      opacity: 1; 
+  }
+
+  .form-container {
+      max-width: none; /* Zajištění šířky na celé obrazovce */
+      
+  }
+
+  .gallery img {
+      width: 100%;
+      height: auto;
+  }
+
+  #mainImage {
+      width: 100%;
+      max-width: none;
+      background-color: none;
+      padding: 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .footer {
+      flex-direction: column;
+      padding: 20px;
+  }
+
+  .footer-left, .footer-right {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  .Booking {
+    display: flex;
+    justify-content: center; /* Horizontální centrování */
+    align-items: center; /* Vertikální centrování */
+  }  
+
+  .picturebox .arrow {
+      font-size: 400%; /* Menší šipky pro mobilní zařízení */
+  }
+
+  .map-container {
+      height: 200px;
+  }
+
+  .Wave svg {
+    width: 100%;
+    height: 40%;
+  }
+ 
+}
