@@ -249,6 +249,11 @@
     justify-content: flex-start;
   }
 
+  .footer-right h2 {
+    padding-left: 10px;
+    text-align: left;
+  }
+
   .footer-right p {
     text-align: left;
     padding-left: 0;
@@ -627,6 +632,11 @@
       width: 100%;
       margin-bottom: 20px;
   }
+
+  .footer-right h2 {
+    text-align: center;
+  }
+  
 
   .Booking {
     display: flex;
