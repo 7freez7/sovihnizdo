@@ -449,8 +449,6 @@
     margin-top: 20px;
   }
 
-
-
   .footer-right p,
   .footer-right h3 {
     color: #f0f0f0;
@@ -462,12 +460,28 @@
   display: none;
 }
 
+.form-mobile {
+  display: none;
+  width: 95%;
+  margin: 0 auto;
+}
+
   @media (max-width: 768px) {
+
+    .form-mobile {
+      display: block;
+    }
+
+    .form-and-gallery .form-container {
+      display: none;
+    }
 
     * {
       padding: 0;
       margin: 0;
     }
+
+
     .Dots {
       display: block;
     }
@@ -530,9 +544,8 @@
 }
 
   .square {
-    width: 95%; 
+    width: 100%; 
     margin: 0;
-    padding: 20px;
     box-sizing: border-box;
     display: none; /* Skryjeme všechny "squares" na začátku */
 }
@@ -540,7 +553,6 @@
 .square.active {
   display: block; /* Zobrazí pouze aktivní "square" */
 }
-
 
 .square-left-arrow, .square-right-arrow {
   position: absolute;

@@ -53,7 +53,7 @@
     </div>
 
     <div id="container2" class="container2">
-        <button class="square-left-arrow">&#10094;</button> <!-- Upravená třída pro levou šipku -->
+        <button class="square-left-arrow">&#10094;</button>
        
         <div class="square" onclick="toggleText(this)">
             <img src="images/bed-icon.svg" alt="Ubytování" class="icon">
@@ -101,7 +101,7 @@
             </div>
         </div> 
 
-        <button class="square-right-arrow">&#10095;</button> <!-- Upravená třída pro pravou šipku -->
+        <button class="square-right-arrow">&#10095;</button>
         
     </div>
 
@@ -156,11 +156,28 @@
     </div>
 
     <div id="lightbox" class="lightbox">
-        <button class="arrow left-arrow">&#10094;</button> <!-- Přidána levá šipka -->
-        <button class="arrow right-arrow">&#10095;</button> <!-- Přidána pravá šipka -->
+        <button class="arrow left-arrow">&#10094;</button> 
+        <button class="arrow right-arrow">&#10095;</button>
         <span class="close">&times;</span>
         <img class="lightbox-content">
 
+    </div>
+
+    <div class="form-mobile">
+        <div class="form-container">
+            <h2>Kontaktní formulář</h2>
+            <form id="submissionForm" method="post" onsubmit="sendEmail(event)">
+                <label for="email">Váš Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Zpráva</label>
+                <textarea id="message" name="message" required></textarea>
+                <div id="SendInfo" style="text-align: left; color: grey; font-size: 10px;">Web si Vaše data neukládá.</div>
+        
+                <button type="submit">Odeslat</button>
+            </form>
+        </div>
+        
     </div>
 
     <footer class="footer">
@@ -173,17 +190,20 @@
             <h2>Kontakt</h2>
             <p>Adresa: <a href="https://maps.app.goo.gl/8hsCmEeP8ZnMeqah8" 
                 target=_blank; style="color: #f0f0f0;">Rudník 128, 543 72</a></p>
-            <p>Telefon: +420 775 259 916 | +420 605 757 677</p>
+            <p>Telefon +420 775 259 916 | +420 605 757 677</p>
             <p>Email: info@sovihnizdo.cz</p>
             <p>IČO: 03723950</p>
             <br>
             <div class="Booking">
-                <a href="https://www.booking.com/Share-DCA5TM" target="_blank"><img src="images/Booking.com_Logo.svg" style="background-color: white; padding: 5px; border-radius: 5px; height: 50px;" alt="booking"></a>   
+                <a href="https://www.booking.com/hotel/cz/sovi-hnizdo.cs.html?aid=1181029&label=msn-uPw6Dgj9uTT1sT%2AET2dBgQ-79920942895256%3Atidat-2331720565596894%3Aloc-51%3Aneo%3Amtb%3Alp138241%3Adec%3Aqssovi%20hnizdo%20booking-Share-7gGBOC%401731627568-Share-DcfZBDE%401738162672&sid=1695fe726db70f601a0a2cf3a22381ee&dest_id=-554281&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1738162681&srpvid=706e693b307c012c&type=total&ucfs=1&" 
+                target="_blank"><img src="images/Booking.com_Logo.svg" style="background-color: white; padding: 5px; border-radius: 5px; height: 50px;" alt="booking"></a>   
             </div>
             
 
         </div>
     </footer>
+
+    
 
 <script src="script.js"></script>
 </body>
