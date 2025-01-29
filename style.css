@@ -172,12 +172,11 @@
 
   }
 
-
   .square {
-    width: 30%;
+    width: 31%;
     height: 300px;
     padding: 30px;
-    margin: 10px; /* Mezera mezi čtverci */
+    margin: 11px; /* Mezera mezi čtverci */
     background-color: #f7f7f7;
     border: 1px solid #ddd;
     border-radius: 3%;
@@ -191,7 +190,6 @@
     transition: transform 0.3s ease;
     position: relative;
     font-size: 120%;
-
 
 }
 
